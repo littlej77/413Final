@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Details";
+}
+@model _413Final.Models.Quote
+
+
+<div class="justify-content-xl-center">
+    <h5>Quote</h5>
+    <p>@Model.QuoteText</p>
+    <br />
+
+    <h5>Author</h5>
+    <p>@Model.Author</p>
+    <br />
+
+    <h5>Date</h5>
+    <p>@Model.Date</p>
+    <br />
+
+    <h5>Subject</h5>
+    <p>@Model.Subject</p>
+    <br />
+
+    <h5>Citation</h5>
+    <p>@Model.Citation</p>
+    <br />
+
+    <a asp-controller="Home" class="btn btn-info btn-sm" onclick="confirm('Are you sure you want to edit this data?')" asp-action="Edit" asp-route-QuoteID="@Model.QuoteID">Edit</a>
+    <a asp-controller="Home" class="btn btn-warning btn-sm" onclick="confirm('Are you sure you want to delete this data?')" asp-action="Delete" asp-route-QuoteID="@Model.QuoteID">Delete</a>
+    <a asp-controller="Home" class="btn btn-primary btn-sm" asp-action="Index">Back</a>
+</div>

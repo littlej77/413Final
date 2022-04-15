@@ -1,0 +1,35 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model List<Quote>
+<center>
+    <h1>Welcome to My Quote Library!</h1>
+    <h5>I am exicted to share with you all of my favorite quotes. Feel free to add your own favorites!</h5>
+    <img src="~/img/dream.jpg" alt="dream it" style="width:33.3%">
+    <p>My hope today is to inspire you to be the best version of yourself! Don't know where to start? Click <a asp-controller="Home" asp-action="Random">here</a> for a random inspiring quote!</p>
+</center>
+
+<table class="table table-bordered">
+
+    <thead class="font-weight-bold">
+        <tr>
+            <td>Quote</td>
+            <td>Author</td>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var q in Model)
+        {
+            <tr>
+                <td>@q.QuoteText</td>
+                <td>@q.Author</td>
+
+                <td><a asp-controller="Home" class="btn btn-info btn-sm" asp-action="Details" asp-route-QuoteID="@q.QuoteID">Details</a></td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<form method="get">
+    <a asp-controller="Home" class="btn btn-info btn-lg" asp-action="Add">Add a quote</a>
+</form>

@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Add/Edit";
+}
+@model _413Final.Models.Quote
+
+<div>
+    <form method="post">
+
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        @*<label asp-for="QuoteID">QuoteID:</label>
+        <input asp-for="QuoteID" />
+        <br />*@
+
+        <label asp-for="QuoteText">Quote:</label>
+        <input asp-for="QuoteText" />
+        <br />
+
+        <label asp-for="Author">Author:</label>
+        <input asp-for="Author" />
+        <br />
+
+        <label asp-for="Date">Date:</label>
+        <input asp-for="Date" />
+        <br />
+
+        <label asp-for="Subject">Subject:</label>
+        <input asp-for="Subject" />
+        <br />
+
+        <label asp-for="Citation">Citation:</label>
+        <input asp-for="Citation" />
+        <br />
+
+        <input type="hidden" asp-for="@Model.QuoteID" />
+
+        <div class="float-end">
+            <input class="btn btn-primary" onclick="confirm('Are you sure this data is correct?')" type="submit" value="Done" />
+        </div>
+    </form>
+</div>
